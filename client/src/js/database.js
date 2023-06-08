@@ -2,7 +2,7 @@ import { openDB } from 'idb';
 
 const initdb = async () =>
   openDB('jate_db', 1, {
-    // switched the starter code from 'jate' to jate_db
+  
     upgrade(db) {
       if (db.objectStoreNames.contains('jate_db')) {
         console.log('jate database already exists');
@@ -14,15 +14,11 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-// copy and pasted (with a few tweaks from class code)
-
 export const putDb = async (content) => {
   console.log('Post to the database');
 
   // Create a connection to the database database and version we want to use.
   const jate_db = await openDB('jate_db', 1);
-  // In the example code they named the database jate? 
 
   // Create a new transaction and specify the database and data privileges.
   const tx = jate_db.transaction('jate_db', 'readwrite');
@@ -44,7 +40,7 @@ export const getDb = async () => {
 
   console.log('GET all from the database');
 
-// Create a connection to the database database and version we want to use.
+// Create a connection to the database database and version 
 const jate_db = await openDB('jate_db', 1);
 
 // Create a new transaction and specify the database and data privileges.
